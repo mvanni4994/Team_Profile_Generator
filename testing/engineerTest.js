@@ -4,7 +4,7 @@ describe("getRole",() => {
     it("should return 'Engineer' from getRole()",()=> {
         const engineer = new Engineer("Lunafreya", 26, "Lunafreya@insomnia.com", "LunafreyaFleurent");
         console.log(engineer);
-        expect(engineer.getRole()).to.equal("engineer");
+        expect(engineer.getRole()).to.equal("Engineer");
     });
 });
 
@@ -25,7 +25,7 @@ describe("getID", () => {
 });
 
 describe("getEmail", () => {
-    it("should return 'noctis@insomnia.com' from getEmail()",()=> {
+    it("should return 'Lunafreya@insomnia.com' from getEmail()",()=> {
         const engineer = new Engineer("Lunafreya", 26, "Lunafreya@insomnia.com", "LunafreyaFleurent");
         console.log(engineer);
         expect(engineer.getEmail()).to.equal("Lunafreya@insomnia.com");
@@ -33,7 +33,7 @@ describe("getEmail", () => {
 });
 
 describe("getGithub", () => {
-    it("should return 'Lunafreya' from getGithub()",()=> {
+    it("should return 'LunafreyaFleurent' from getGithub()",()=> {
         const engineer = new Engineer("Lunafreya", 26, "Lunafreya@insomnia.com", "LunafreyaFleurent");
         console.log(engineer);
         expect(engineer.getGithub()).to.equal("LunafreyaFleurent");
