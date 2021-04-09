@@ -10,7 +10,7 @@ function createApp(){
 var intern = require('./StaffLib/intern');
 var manager = require('./StaffLib/manager');
 var engineer = require('./StaffLib/engineer');
-var employee = require('./StaffLib/employ');
+var employee = require('./StaffLib/employee');
 
 function managerPrompt(){
 inquirer.prompt([
@@ -253,8 +253,22 @@ function internPrompt(){
                                 <li class="list-group-item">ID: ${employee.ID}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                             </ul>
-                        </div>`}
+                        </div>`
+                    }
                 }
             }
         }
     )};
+    fs.appendFile ("index.html", data, function (error){
+        error? console.error(error): console.log('success')
+    })
+
+    function endHTML(){
+        data = `</div>
+        </body>
+        </html>`
+        fs.appendFile ("index.html", data, function (error){
+            error? console.error(error): console.log('success')
+        });
+    }
+    createApp();
