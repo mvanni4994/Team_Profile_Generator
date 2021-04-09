@@ -205,6 +205,7 @@ function internPrompt(){
       fs.writeFile('index.html', data, (error) => {
           error? console.error(error) : console.log('success!')
       });
+    }
             function inputHTML(){
                 let data = ""
                 newTeamProfile.forEach(function(employee){
@@ -231,7 +232,7 @@ function internPrompt(){
                                 <li class="list-group-item">Office Number: ${employee.engineerGithub}</li>
                             </ul>
                         </div>`
-            } else if(employee.getRole() ==="Intern"){
+            } else if (employee.getRole() ==="Intern"){
                 if (employee.getRole() === "Intern"){
                     data +=
                     `<div class="card" style="width: 18rem;">
@@ -243,8 +244,7 @@ function internPrompt(){
                             <li class="list-group-item">Office Number: ${employee.internSchool}</li>
                         </ul>
                     </div>`
-                } else if(employee.getRole() ==="Employee"){
-                    if (employee.getRole() === "Employee"){
+                } else{
                         data +=
                         `<div class="card" style="width: 18rem;">
                         <div class="card-header" id="topBar">Engineer</div>
@@ -253,6 +253,8 @@ function internPrompt(){
                                 <li class="list-group-item">ID: ${employee.ID}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                             </ul>
-                        </div>`
-                    }
+                        </div>`}
                 }
+            }
+        }
+    )};
