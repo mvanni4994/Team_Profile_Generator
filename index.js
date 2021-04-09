@@ -5,12 +5,12 @@ let newTeamProfile = []
 
 function createApp(){
     teamPrompt()
-};
+}
 
-var intern = require('./StaffLib/intern');
-var manager = require('./StaffLib/manager');
-var engineer = require('./StaffLib/engineer');
-var employee = require('./StaffLib/employee');
+var Intern = require('./StaffLib/intern');
+var Manager = require('./StaffLib/manager');
+var Engineer = require('./StaffLib/engineer');
+var Employee = require('./StaffLib/employee');
 
 function managerPrompt(){
 inquirer.prompt([
@@ -22,7 +22,7 @@ inquirer.prompt([
     {
         type:"input",
         name: "id",
-        message:"What is the Manager's employee ID?"
+        message:"What is the Manager's employee id?"
     },
     {
         type:"input",
@@ -43,7 +43,7 @@ inquirer.prompt([
     newTeamProfile.push(newMem);
     teamPrompt();
 })
-};
+}
 
 function internPrompt(){
     inquirer.prompt([
@@ -55,7 +55,7 @@ function internPrompt(){
         {
             type:"input",
             name: "id",
-            message:"What is the intern's employee ID?"
+            message:"What is the intern's employee id?"
         },
         {
             type:"input",
@@ -76,7 +76,7 @@ function internPrompt(){
         newTeamProfile.push(newMem);
         teamPrompt();
     })
-    };
+    }
 
     function engineerPrompt(){
         inquirer.prompt([
@@ -88,7 +88,7 @@ function internPrompt(){
             {
                 type:"input",
                 name: "id",
-                message:"What is the engineer's employee ID?"
+                message:"What is the engineer's employee id?"
             },
             {
                 type:"input",
@@ -109,7 +109,7 @@ function internPrompt(){
             newTeamProfile.push(newMem);
             teamPrompt();
         })
-        };
+        }
 
         function employeePrompt(){
             inquirer.prompt([
@@ -121,7 +121,7 @@ function internPrompt(){
                 {
                     type:"input",
                     name: "id",
-                    message:"What is the employee's employee ID?"
+                    message:"What is the employee's employee id?"
                 },
                 {
                     type:"input",
@@ -136,19 +136,19 @@ function internPrompt(){
                 newTeamProfile.push(newMem);
                 teamPrompt();
             })
-            };
+            }
 
             function teamPrompt() {
                 inquirer.prompt([
                     {
                         type: 'list',
-                        name: 'add',
+                        name: 'addMore',
                         message: 'Would you like to add an employee?',
-                        choices: ['Engineer.', 'Intern.', 'Manager.', 'Employee.', 'No.']
+                        choices: ['Engineer.', 'Intern.', 'Manager.','Employee.', 'No.']
                     },
                 ])
-                .then(function(response){
-                    switch(response.add){
+            .then(function(response){
+                    switch(response.addMore){
                         case "Add an Engineer.":
                             engineerPrompt();
                             break;
@@ -170,7 +170,7 @@ function internPrompt(){
                             break;
                     }
                 });
-            };
+            }
 
             function completeTeam(){
                 console.log("Success!")
@@ -203,8 +203,8 @@ function internPrompt(){
       <div class="row">`
 
       fs.writeFile('index.html', data, (error) => {
-          error? console.error(error) : console.log('success!')
-      });
+          error ? console.error(error) : console.log('Success!')
+      })
     }
             function inputHTML(){
                 let data = ""
@@ -215,31 +215,29 @@ function internPrompt(){
                         <div class="card-header" id="topBar">Manager</div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item" id="name">${employee.name}</li>
-                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">id: ${employee.id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
-                                <li class="list-group-item">Office Number: ${employee.managerNumber}</li>
+                                <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
                             </ul>
                         </div>`
                     } else if(employee.getRole() ==="Engineer"){
-                    if (employee.getRole() === "Engineer"){
                         data +=
                         `<div class="card" style="width: 18rem;">
                         <div class="card-header" id="topBar">Engineer</div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item" id="name">${employee.name}</li>
-                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">id: ${employee.id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                                 <li class="list-group-item">Office Number: ${employee.engineerGithub}</li>
                             </ul>
                         </div>`
             } else if (employee.getRole() ==="Intern"){
-                if (employee.getRole() === "Intern"){
                     data +=
                     `<div class="card" style="width: 18rem;">
                     <div class="card-header" id="topBar">Intern</div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item" id="name">${employee.name}</li>
-                            <li class="list-group-item">ID: ${employee.ID}</li>
+                            <li class="list-group-item">id: ${employee.id}</li>
                             <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                             <li class="list-group-item">Office Number: ${employee.internSchool}</li>
                         </ul>
@@ -250,25 +248,24 @@ function internPrompt(){
                         <div class="card-header" id="topBar">Engineer</div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item" id="name">${employee.name}</li>
-                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">id: ${employee.id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                             </ul>
                         </div>`
                     }
-                }
-            }
-        }
-    )};
-    fs.appendFile ("index.html", data, function (error){
-        error? console.error(error): console.log('success')
-    })
+                })
+        fs.appendFile ("index.html", data, function (error){
+            error? console.error(error): console.log('Success!')
+        })
+    
+    }
 
     function endHTML(){
         data = `</div>
         </body>
         </html>`
         fs.appendFile ("index.html", data, function (error){
-            error? console.error(error): console.log('success')
+            error ? console.error(error): console.log('Success!')
         });
     }
-    createApp();
+    createApp()

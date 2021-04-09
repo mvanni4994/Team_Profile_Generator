@@ -32,10 +32,10 @@ describe("getEmail", () => {
     });
 });
 
-describe("getNumber", () => {
-    it("should return '115' from getNumber()",()=> {
+describe("getOfficeNumber", () => {
+    it("should return '115' from getOfficeNumber()",()=> {
         const manager = new Manager("Regis", 1, "KingRegis@insomnia.com", "115");
         console.log(manager);
-        expect(manager.getNumber()).to.equal("115");
+        expect(manager.getOfficeNumber()).to.equal("115");
     });
 });
