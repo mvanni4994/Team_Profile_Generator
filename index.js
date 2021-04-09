@@ -180,4 +180,79 @@ function internPrompt(){
                 endHTML();
             }
 
-   
+            function beginHTML(){
+                const data = `
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>My Team</title>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+          <a class="brand-logo center">My Team</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">`
+
+      fs.writeFile('index.html', data, (error) => {
+          error? console.error(error) : console.log('success!')
+      });
+            function inputHTML(){
+                let data = ""
+                newTeamProfile.forEach(function(employee){
+                    if (employee.getRole() === "Manager"){
+                        data +=
+                        `<div class="card" style="width: 18rem;">
+                        <div class="card-header" id="topBar">Manager</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="name">${employee.name}</li>
+                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                                <li class="list-group-item">Office Number: ${employee.managerNumber}</li>
+                            </ul>
+                        </div>`
+                    } else if(employee.getRole() ==="Engineer"){
+                    if (employee.getRole() === "Engineer"){
+                        data +=
+                        `<div class="card" style="width: 18rem;">
+                        <div class="card-header" id="topBar">Engineer</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="name">${employee.name}</li>
+                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                                <li class="list-group-item">Office Number: ${employee.engineerGithub}</li>
+                            </ul>
+                        </div>`
+            } else if(employee.getRole() ==="Intern"){
+                if (employee.getRole() === "Intern"){
+                    data +=
+                    `<div class="card" style="width: 18rem;">
+                    <div class="card-header" id="topBar">Intern</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="name">${employee.name}</li>
+                            <li class="list-group-item">ID: ${employee.ID}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                            <li class="list-group-item">Office Number: ${employee.internSchool}</li>
+                        </ul>
+                    </div>`
+                } else if(employee.getRole() ==="Employee"){
+                    if (employee.getRole() === "Employee"){
+                        data +=
+                        `<div class="card" style="width: 18rem;">
+                        <div class="card-header" id="topBar">Engineer</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="name">${employee.name}</li>
+                                <li class="list-group-item">ID: ${employee.ID}</li>
+                                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                            </ul>
+                        </div>`
+                    }
+                }
