@@ -138,4 +138,46 @@ function internPrompt(){
             })
             };
 
-            
+            function teamPrompt() {
+                inquirer.prompt([
+                    {
+                        type: 'list',
+                        name: 'add',
+                        message: 'Would you like to add an employee?',
+                        choices: ['Engineer.', 'Intern.', 'Manager.', 'Employee.', 'No.']
+                    },
+                ])
+                .then(function(response){
+                    switch(response.add){
+                        case "Add an Engineer.":
+                            engineerPrompt();
+                            break;
+        
+                        case "Add an Intern.":
+                            internPrompt();
+                            break;
+        
+                        case "Add a Manager.":
+                            managerPrompt();
+                            break;
+        
+                        case "Add an Employee.":
+                            employeePrompt();
+                            break;    
+
+                        case "No.":
+                            completeTeam();
+                            break;
+                    }
+                });
+            };
+
+            function completeTeam(){
+                console.log("Success!")
+
+                beginHTML();
+                inputHTML();
+                endHTML();
+            }
+
+   
