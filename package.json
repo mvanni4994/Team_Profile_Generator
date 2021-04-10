@@ -9,5 +9,19 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "name": "team_profile_generator",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvanni4994/Team_Profile_Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvanni4994/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/mvanni4994/Team_Profile_Generator#readme"
 }
