@@ -16,7 +16,7 @@ function managerPrompt(){
     inquirer.prompt([
         {
             type:"input",
-            name: "Name",
+            name: "name",
             message:"What is the Manager's name?"
         },
         {
@@ -49,7 +49,7 @@ function managerPrompt(){
         inquirer.prompt([
             {
                 type:"input",
-                name: "Name",
+                name: "name",
                 message:"What is the intern's name?"
             },
             {
@@ -82,7 +82,7 @@ function managerPrompt(){
             inquirer.prompt([
                 {
                     type:"input",
-                    name: "Name",
+                    name: "name",
                     message:"What is the engineer's name?"
                 },
                 {
@@ -111,33 +111,33 @@ function managerPrompt(){
             })
             }
     
-            function employeePrompt(){
-                inquirer.prompt([
-                    {
-                        type:"input",
-                        name: "Name",
-                        message:"What is the employee's name?"
-                    },
-                    {
-                        type:"input",
-                        name: "id",
-                        message:"What is the employee's employee id?"
-                    },
-                    {
-                        type:"input",
-                        name: "email",
-                        message:"What is the employee's email address?"
-                    },
-    ]).then(function(response){
-        var name = response.name;
-        var ID = response.ID;
-        var email = response.email;
-        var internSchool = response.internSchool
-        const newTeamMem = new Intern(name, ID, email, internSchool);
-        newTeamProfile.push(newTeamMem);
-        teamPrompt();
-    })
-} 
+//             function employeePrompt(){
+//                 inquirer.prompt([
+//                     {
+//                         type:"input",
+//                         name: "name",
+//                         message:"What is the employee's name?"
+//                     },
+//                     {
+//                         type:"input",
+//                         name: "id",
+//                         message:"What is the employee's employee id?"
+//                     },
+//                     {
+//                         type:"input",
+//                         name: "email",
+//                         message:"What is the employee's email address?"
+//                     },
+//     ]).then(function(response){
+//         var name = response.name;
+//         var ID = response.ID;
+//         var email = response.email;
+//         var internSchool = response.internSchool
+//         const newTeamMem = new Intern(name, ID, email, internSchool);
+//         newTeamProfile.push(newTeamMem);
+//         teamPrompt();
+//     })
+// } 
     
     function teamPrompt(){
         inquirer.prompt([
@@ -211,7 +211,7 @@ function inputHTML(){
             <div class="card-header" id="topBar">Manager</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.ID}</li>
+                    <li class="list-group-item">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">Office Number: ${employee.managerNumber}</li>
                 </ul>
@@ -222,7 +222,7 @@ function inputHTML(){
             <div class="card-header" id="topBar">Engineer</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.ID}</li>
+                    <li class="list-group-item">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item"><a href="https://github.com/${employee.engineerGithub}">https://github.com/${employee.engineerGithub}</a></li>
                 </ul>
@@ -233,7 +233,7 @@ function inputHTML(){
             <div class="card-header" id="topBar">Intern</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.ID}</li>
+                    <li class="list-group-item">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">School: ${employee.internSchool}</li>
                 </ul>
