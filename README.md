@@ -12,7 +12,7 @@ In your terminal, run node index.js, select which employee to add and fill out t
 
 ## App Features
 
-![Screenshot_Deployed_Website]()
+![Screenshot_Deployed_Website](https://github.com/mvanni4994/Team_Profile_Generator/blob/main/Capture.JPG?raw=true)
 
 ## Technology Used
 JavaScript, JQuery, HTML, CSS, inquirer, fs, npm i for dependencies
