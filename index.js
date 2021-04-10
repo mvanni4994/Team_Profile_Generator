@@ -21,8 +21,8 @@ function managerPrompt(){
         },
         {
             type:"input",
-            name: "id",
-            message:"What is the Manager's employee id?"
+            name: "ID",
+            message:"What is the Manager's employee ID?"
         },
         {
             type:"input",
@@ -36,10 +36,10 @@ function managerPrompt(){
         },
     ]).then(function(response) {
         var name = response.name;
-        var id = response.id;
+        var ID = response.ID;
         var email = response.email;
         var officeNumber = response.officeNumber;
-        const newMem = new Manager(name, id, email, officeNumber);
+        const newMem = new Manager(name, ID, email, officeNumber);
         newTeamProfile.push(newMem);
         teamPrompt();
     })
@@ -54,8 +54,8 @@ function managerPrompt(){
             },
             {
                 type:"input",
-                name: "id",
-                message:"What is the intern's employee id?"
+                name: "ID",
+                message:"What is the intern's employee ID?"
             },
             {
                 type:"input",
@@ -69,10 +69,10 @@ function managerPrompt(){
             },
         ]).then(function(response) {
             var name = response.name;
-            var id = response.id;
+            var ID = response.ID;
             var email = response.email;
             var internSchool = response.internSchool;
-            const newMem = new Intern(name, id, email, internSchool);
+            const newMem = new Intern(name, ID, email, internSchool);
             newTeamProfile.push(newMem);
             teamPrompt();
         })
@@ -87,8 +87,8 @@ function managerPrompt(){
                 },
                 {
                     type:"input",
-                    name: "id",
-                    message:"What is the engineer's employee id?"
+                    name: "ID",
+                    message:"What is the engineer's employee ID?"
                 },
                 {
                     type:"input",
@@ -102,10 +102,10 @@ function managerPrompt(){
                 },
             ]).then(function(response) {
                 var name = response.name;
-                var id = response.id;
+                var ID = response.ID;
                 var email = response.email;
                 var engineerGithub = response.engineerGithub;
-                const newMem = new Engineer(name, id, email, engineerGithub);
+                const newMem = new Engineer(name, ID, email, engineerGithub);
                 newTeamProfile.push(newMem);
                 teamPrompt();
             })
@@ -120,8 +120,8 @@ function managerPrompt(){
 //                     },
 //                     {
 //                         type:"input",
-//                         name: "id",
-//                         message:"What is the employee's employee id?"
+//                         name: "ID",
+//                         message:"What is the employee's employee ID?"
 //                     },
 //                     {
 //                         type:"input",
@@ -184,7 +184,7 @@ function beginHTML(){
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="wIDth=device-wIDth, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="./dist/style.css">
@@ -193,7 +193,7 @@ function beginHTML(){
         <body>
             <nav class="navbar navbar-dark bg-dark">
                 <span class="navbar-brand mb-0 h1 w-100 text-center">My Team</span>
-                <p id="myTeam" class="lead"></p>
+                <p ID="myTeam" class="lead"></p>
             </nav>
             <div class="row">
             `
@@ -207,33 +207,33 @@ function inputHTML(){
     newTeamProfile.forEach(function(employee){
         if (employee.getRole() === "Manager"){
             data +=
-            `<div class="card" style="width: 18rem;">
-            <div class="card-header" id="topBar">Manager</div>
+            `<div class="card" style="wIDth: 18rem;">
+            <div class="card-header" ID="topBar">Manager</div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item" ID="name">${employee.name}</li>
+                    <li class="list-group-item">ID: ${employee.ID}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">Office Number: ${employee.managerNumber}</li>
                 </ul>
             </div>`
         } else if (employee.getRole() === "Engineer"){
             data +=
-            `<div class="card" style="width: 18rem;">
-            <div class="card-header" id="topBar">Engineer</div>
+            `<div class="card" style="wIDth: 18rem;">
+            <div class="card-header" ID="topBar">Engineer</div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item" ID="name">${employee.name}</li>
+                    <li class="list-group-item">ID: ${employee.ID}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item"><a href="https://github.com/${employee.engineerGithub}">https://github.com/${employee.engineerGithub}</a></li>
                 </ul>
             </div>`
         } else {
             data +=
-            `<div class="card" style="width: 18rem;">
-            <div class="card-header" id="topBar">Intern</div>
+            `<div class="card" style="wIDth: 18rem;">
+            <div class="card-header" ID="topBar">Intern</div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="name">${employee.name}</li>
-                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item" ID="name">${employee.name}</li>
+                    <li class="list-group-item">ID: ${employee.ID}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">School: ${employee.internSchool}</li>
                 </ul>
