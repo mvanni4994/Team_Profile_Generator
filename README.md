@@ -8,7 +8,7 @@ Deployed App: https://mvanni4994.github.io/Team_Profile_Generator/
 Github Repository: https://github.com/mvanni4994
 
 ## Instructions
-In your terminal, run node index.js, select which employee to add and fill out the prompts. Once complete, sekect the complete button. A new index.html file will be created. Open the index.html file in your browser to see your added staff!
+In your terminal, run node index.js, select which employee to add and fill out the prompts. Once complete, select the complete button. A new index.html file will be created. Open the index.html file in your browser to see your added staff!
 
 ## See Walkthrough Below for Assistance
 https://drive.google.com/file/d/18jMy3biuD-UAj-ZPceYEzxj6QBo1_soG/view
